@@ -9,16 +9,14 @@
 
 	<body style="font-family: helvetica neue; font-weight: light; height:100%">
 	
-		<div id="bar";>
+		<div id="bar">
 			<div style="font-size:40px; ">SunwayConfessions</div>
 			<div id="about"><a href="https://xyrelium.com/about.html">About Us</a></div>
 			<div align="center">
-				<form method="post">
 					<textarea id="confession_input" placeholder="Confess your spiciest secrets..."></textarea>
 					<br>
 					<br>
 					<input id="post_button" type="submit" value="Confess!">
-				</form>
 		</div>
 	</div>
 		<!--posts-->
@@ -62,6 +60,8 @@
 
 
 			  postButton.addEventListener("click", async () => {
+				  event.preventDefault();
+				  
 
 			    const confession = confessionInput.value;
 
@@ -78,7 +78,7 @@
 
 			    confessionInput.value = "";
 
-			    loadPosts();
+			 loadPosts();
 	
 				async function loadPosts(){
 
