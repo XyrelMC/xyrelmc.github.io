@@ -70,7 +70,7 @@ textarea:hover{
     padding: 10px;
 }
 
-@keyframes appear{
+/* @keyframes appear{
     from {
         scale: 0.5;
         transform: TranslateX(-100px);
@@ -80,7 +80,7 @@ textarea:hover{
         transform: translateX(0px);
     }
 }
-
+*/
 .post{
     padding:10px;
     font-size:20px;
