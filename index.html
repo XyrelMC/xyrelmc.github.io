@@ -23,6 +23,8 @@
 		<!--posts-->
 		<div id="post_bar">
 		<div id="timeline"; align="center">
+		</div>
+		</div>
 			<!--post 1-->
 		
 		<script type="module">
@@ -37,7 +39,7 @@
 		    query,
 		    orderBy,
 		    onSnapshot
-		  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+		  } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore.js";
 		  
 		  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-analytics.js";
 		  // TODO: Add SDKs for Firebase products that you want to use
@@ -62,7 +64,7 @@
 		  const postBtn = document.getElementById("post_button");
 		  const confessionInput = document.getElementById("confession_input");
 		  const timeline = document.getElementById("timeline");
-		  post_button.addEventListener("click", async () => {
+		  postBtn.addEventListener("click", async () => {
 
 		    const text = confession_input.value.trim();
 
@@ -75,7 +77,7 @@
 		        createdAt: serverTimestamp()
 		      });
 
-		      confession_input.value = "";
+		      confessionInput.value = "";
 
 		    } catch (error) {
 		      console.error("Error posting confession:", error);
