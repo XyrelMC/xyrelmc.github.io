@@ -6,14 +6,17 @@
 	</head>
 	<style>
 		body{
-			background-image: url(/https://media.discordapp.net/attachments/1496408150138421311/1504793030778163280/photo-1524334228333-0f6db392f8a1.png);
+			margin:0;
+			min-height:100vh;
+			background-image:url("https://raw.githubusercontent.com/XyrelMC/xyrelmc.github.io/4eda33ceecb9ff540828d886ef36787071801328/assets/background.png");	
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-attachment: fixed;
 		}
 		#bar{
 			height:230px;
-			background-color: rgb(0,0,0,0.7);
+			background-color: rgb(0,0,0,0.4);
 			backdrop-filter: blur(10px);
 			-webkit-backdrop-filter:blur(10px);
 			color: white; 
@@ -63,7 +66,7 @@
 		}
 		#post_bar{
 			margin-top: 240px;
-			background-color: black;
+			background-color: transparent;
 			padding: 10px;
 		}
 		.post{
@@ -71,7 +74,8 @@
 			font-size:20px;
 			display:block;
 			border:1px solid rgb(69,69,69);
-			background-color:rgb(49,49,49);
+			background-color:rgb(49,49,49,0.4);
+			-webkit-backdrop-filter:blur(10px);
 			width: 700px;
 			height: 200px;
 			border-radius: 30px;
@@ -80,7 +84,7 @@
 			
 		}
 	</style>
-	<body style="font-family: helvetica neue; background-color: black; height:100%">
+	<body style="font-family: helvetica neue; height:100%">
 	
 		<div id="bar";>
 			<div style="font-size:40px; ">SunwayConfessions</div>
