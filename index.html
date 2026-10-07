@@ -4,6 +4,7 @@
 	
 		<title>Xyrelium</title>
 	</head>
+	
 	<style>
 		body{
 			margin:0;
@@ -64,7 +65,7 @@
 			height: auto;
 			border-radius: 30px;
 			margin: 20px;
-			color: white;
+			color: gray;
 			transition: 0.3s;
 			align-items: center;
 			
@@ -119,7 +120,115 @@
 			transform: translateY(-5px); 
 			transition: 0.3s;
 		}
+		.images {
+		    display: flex;
+		    gap: 20px;
+		    justify-content: center;
+		    align-items: flex-start;
+			font-size: 23px;
+		}
+		#ximi {
+			display: flex;
+			width: 200px;
+			height: 200px;
+			align-items:left;
+			border-radius: 20px;
+			background-color: transparent;
+			
+		}
+		
+		#ximitext {
+			display: none;
+			font-family: helvetica;
+			font-weight: lighter;
+			font-size:18px;
+			white-space: pre-line;
+			color: gray;
+			
+		}
+
+
+		#ximi:hover~#ximitext{
+			display: block;
+			transition: 0.3s;
+		}
+		#ximi:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+			transform: translateY(-4px); 
+			transition: 0.3s;
+			border:1px solid rgb(69,69,69);
+		}
+		#ximidiv {
+			position: relative;
+			tab-size: 2;
+		}
+		#ximipad {
+			display: flex;
+			width: 200px;
+			height: 200px;
+			align-items:center;
+			border-radius: 20px;
+			background-color: transparent;
+		}
+		
+		#padtext {
+			display: none;
+			align-items: center;
+			font-family: helvetica;
+			font-weight: lighter;
+			font-size:18px;
+			white-space: pre-line;
+			color: gray;
+		}
+
+
+		#ximipad:hover~#padtext{
+			display: block;
+			transition: 0.3s;
+		}
+		#ximipad:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+			transform: translateY(-4px); 
+			transition: 0.3s;
+			border:1px solid rgb(69,69,69);
+		}
+		#ximidiv {
+			position: relative;
+			tab-size: 2;
+		}
+		#macbook {
+			display: flex;
+			width: 200px;
+			height: 200px;
+			border-radius: 20px;
+			background-color: transparent;
+		}
+		
+		#mactext {
+			display: none;
+			align-items: center;
+			font-family: helvetica;
+			font-weight: lighter;
+			font-size:18px;
+			white-space: pre-line;
+			color: gray;
+		}
+
+
+		#macbook:hover~#mactext{
+			display: block;
+			transition: 0.3s;
+		}
+		#macbook:hover {
+			box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+			transform: translateY(-4px); 
+			transition: 0.3s;
+			border:1px solid rgb(69,69,69);
+		}
+
+	
 	</style>
+	
 	<body style="font-family: helvetica neue; height:100%">
 
 		<!--posts-->
@@ -129,17 +238,63 @@
 			<div class="post" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-reverse="true" data-tilt-max = "10">
 				<div align="center">
 				<div>
-					<div style = "font-weight: bold; color: gray" div align = "center">About Me</div> Hi! My name is Marcus, I am an 18 year old college student from Malaysia! I like history, debates, minecraft, and science fiction. 
+					<div style = "font-weight: regular; color: white" div align = "center">About Me</div> Hi! My name is Marcus, I am an 18 year old college student from Malaysia! I like history, debates, minecraft, tech, and science fiction. 
 					<br></br>
 				</div>
 		
 			</div>
 		</div>
-		<div class = "post"data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-reverse="true" data-tilt-max = "10">
-			<div align = "center">
+		<div class = "post">
 				<div>
-					<div style = "font-weight: bold; color: gray" div align = "center">My devices</div> 
+					<div style = "font-weight: regular; color: white" div align = "center">My Devices</div> 
+					<div> </div>
+					<div id="ximidiv">
+
+					    <div class="images">
+		
+					        <div>
+					            <img id="ximi" src="https://github.com/XyrelMC/xyrelmc.github.io/blob/main/assets/XIAOMI-15-5G-GRN-removebg-preview.png?raw=true">
+					            <div id="ximitext">
+									Device: Xiaomi 15
+					                Model: Green, 512 GB ROM, 12 GB RAM
+					                Year: 2025
+					                SoC: Qualcomm Snapdragon 8 Elite
+					                Battery: 5240 mAH Si/C, up to 90W charging
+					                Display: 1-120Hz LTPO OLED
+					                Cameras: 1/1.31" main sensor, 
+									1/2.76" 2.6x telephoto,
+									1/2.76" ultrawide,
+					            </div>
+					        </div>
+
+					        <div>
+					            <img id="ximipad" src="https://github.com/XyrelMC/xyrelmc.github.io/blob/main/assets/Pad8.003.jpg-removebg-preview.png?raw=true">
+
+					            <div id="padtext">
+									Device: Xiaomi Pad 8
+					                Model: Black, 256 GB ROM, 8 GB RAM
+									Year: 2026
+									SoC: Qualcomm Snapdragon 8s Gen 4
+									Battery: 9200 mAh, up to 45W charging
+									Display: 144Hz IPS LCD
+									Cameras: who cares lol
+					            </div>
+								</div>
+						<div>
+					            <img id="macbook" src="https://github.com/XyrelMC/xyrelmc.github.io/blob/main/assets/refurb-mba15-m4-midnight-202503_AV4-removebg-preview.png?raw=true">
+
+					            <div id="mactext">
+									Device: Macbook Air
+					                Model: Midnight, 512 GB ROM, 16 GB RAM
+									Year: 2025
+									SoC: Apple M4
+									Display: 13" 60 Hz "Apple Retina Display"
+					            </div>
+								</div>
+								</div>
+							</div>
 				
+						
 		</div>
 		</div>
 		</div>
