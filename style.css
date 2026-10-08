@@ -75,6 +75,8 @@
 		-ms-overflow-style: none;  /* Internet Explorer 10+ */
 		scrollbar-width: none;
 		transition: max-height 1s ease-in-out;
+		box-sizing: border-box;
+		margin: 20px auto; 
 		
 	}
 	.post:hover{
@@ -448,9 +450,8 @@
 		    bottom: 10px;
 		    margin-left: 0;
 		}
-		.xiaomi {
-			max-height: 25vh;
-		}
+	
+
 		
 	}
 	
