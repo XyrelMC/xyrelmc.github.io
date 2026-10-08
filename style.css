@@ -11,6 +11,7 @@
 		background-attachment: fixed;
 		background-color: black;
 		overflow: auto;
+		overflow-x: hidden;
 	}
 	html {
 	    overflow: hidden;
@@ -404,20 +405,41 @@
 	
 	@media (max-width: 800px){  
 		.post{
-			width: 90vw;
+			width: 85vw;
+			font-size: 15px;
 		}
+		#cnsong {
+			display: center;
+			width: 75px;
+			height: 75px;
+			border-radius: 20px;
+			background-color: transparent;
+			}
 		.images {
 			display: block;
 		}
 		
 		.card-stack {
 			width: 90vw;
+			font-size: 15px;
 		}
+		#flip:checked ~ .card-stack .xiaomi{
+			    max-height: 20vh;
+			}
+		#flip:checked ~ .card-stack .xiaomi:hover{
+			max-height: 45vh;
+			}
 		.card-stack:has(.songscard:hover) .xiaomi{
 				    transform: translateY(0px) scale(0.93);
 				    z-index: 0;
-				}
-		
 		}
+		.button {
+		    left: auto;
+		    right: 4vw;
+		    bottom: 10px;
+		    margin-left: 0;
+		}
+		
+	}
 	
 	
