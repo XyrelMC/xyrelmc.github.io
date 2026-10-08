@@ -415,6 +415,12 @@
 			position: relative;
 			width: auto;
 		}
+		#post_bar{
+				margin-top: 20px;
+				background-color: transparent;
+				min-height: 10vh;
+				padding: 10px;
+			}
 		.post{
 			width: 85vw;
 			font-size: 15px;
