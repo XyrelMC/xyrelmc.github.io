@@ -429,7 +429,6 @@
 		}
 		
 		.card-stack {
-			max-height: 20vh;
 			width: 90vw;
 			font-size: 15px;
 		}
@@ -437,7 +436,7 @@
 			    max-height: 20vh;
 			}
 		#flip:checked ~ .card-stack .xiaomi:hover{
-			max-height: 20vh;
+				max-height: 20vh;
 			}
 		.card-stack:has(.songscard:hover) .xiaomi{
 				    transform: translateY(0px) scale(0.93);
@@ -448,6 +447,9 @@
 		    right: 10px;
 		    bottom: 10px;
 		    margin-left: 0;
+		}
+		.xiaomi {
+			max-height: 25vh;
 		}
 		
 	}
