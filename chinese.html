@@ -10,7 +10,7 @@
 		@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 		body{
 			margin:0;
-			height:100vh;
+			min-height:100vh;
 			background-image:url("https://raw.githubusercontent.com/XyrelMC/xyrelmc.github.io/refs/heads/main/assets/background.webp");	
 			background-position: center;
 			background-repeat: no-repeat;
@@ -83,10 +83,15 @@
 			
 				
 		}
+		
+		.xiaomi {
+			z-index: 1;
+		}
 		.socials-container{
 			display: inline-flex;
 			gap: 20px;
 			align-items: center;
+			z-index: 6;
 		}
 		.socials-container a{
 			background-color: white;
@@ -99,9 +104,12 @@
 			display: grid;
 			place-items: center;
 			box-shadow: 0 0px 20px rgba(255, 255, 255);
+			z-index: 6;
+
 		}
 		.socials-container a svg{
 			height: 32px;
+			z-index: 6;
 		}
 		.socials-container a:hover{
 					box-shadow: 0 8px 30px rgba(0,0,0,0.5);
@@ -121,7 +129,8 @@
 			box-shadow: 0 8px 30px rgba(0,0,0,0.5);
 			transform: translateY(-65px);
 			opacity:0;
-			white-space: nowrap
+			white-space: nowrap;
+			z-index: 6;
 		}
 		.socials-container a:hover::before{
 			opacity: 1;
@@ -137,6 +146,7 @@
 		    align-items: flex-start;
 			font-size: 23px;
 		}
+		
 		#ximi {
 			display: flex;
 			width: 200px;
@@ -280,8 +290,108 @@
 			color: white;
 			font-size: 25px;
 		}
-
+		
+		.card-stack{
+			position: relative;
+		    display: grid;
+		    width: 1000px;
+		    margin: 20px auto;
+		}
+		.card-stack .post{
+		    grid-area: 1 / 1;      /* every card goes in the same cell */
+		    margin: 0;
+		    box-sizing: border-box;
+		}
+		.songscard{
+		    transform: translateY(-30px) scale(0.93);
+			z-index: 0;
+		}
+		.card-stack:has(.songscard:hover) .xiaomi{
+		    transform: translateY(0px) scale(0.93);
+		    z-index: 0;
+		}
+		
+		.songscard:hover {
+			transform: translateY(-30px) scale(1);
+			z-index: 2;
+		}
+		
+		
 	
+		#intro {
+			margin-bottom: 50px;
+		}
+		
+		.button {
+		    position: absolute;
+		    left: 100%;
+		    bottom: 0;
+		    margin-left: 20px;
+		    z-index: 5;
+		    width: 50px;
+		    height: 50px;
+		    display: grid;
+		    place-items: center;
+		    border-radius: 10px;
+		    border: 1px solid rgb(69,69,69);
+		    background-color: rgb(49,49,49,0.4);
+		    backdrop-filter: blur(10px);
+		    -webkit-backdrop-filter: blur(10px);
+		    color: white;
+		}
+		
+		input {
+			display: none;
+			align-items: center;
+		}
+		.button label {
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+			align-items: center;
+			text-align: center;
+			place-items: center;
+			display: grid;
+		}
+		#flip: {
+			align-items: center;
+			text-align: center;
+			place-items: center;
+			
+		}
+		#flip:checked ~ .card-stack .songscard{
+		    transform: translateY(0px) scale(1);
+		    z-index: 2;
+		}
+		#flip:checked ~ .card-stack .xiaomi{
+		    transform: translateY(-30px) scale(0.93);
+		    z-index: 0;
+		}
+		#flip:checked ~ .card-stack .xiaomi:hover ~ .songscard{
+			transform: translateY(0px) scale(0.93);
+			z-index: 0;
+		}
+		#flip:checked ~ .card-stack .xiaomi:hover{
+			transform: translateY(-30px) scale(1);
+			z-index: 3;
+		}
+		
+		
+		
+		.card-stack .post{
+		    transition: transform 0.3s ease;
+		}
+		
+		#cnsong {
+			display: center;
+			width: 200px;
+			height: 200px;
+			border-radius: 20px;
+			background-color: transparent;
+		}
+		
+		
+		
 	</style>
 	
 	<body style="font-family: poppins; height:100%">
@@ -291,8 +401,11 @@
 		<!--posts-->
 		<div id="post_bar">
 		<div align="center">
+			<input type = "checkbox" id = "flip" >
+			
 			<!--post 1-->
-			<div class="post" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-reverse="true" data-tilt-max = "10">
+		<div id = "intro">
+			<div class="post" data-tilt data-tilt-glare data-tilt-max-glare="0.05" data-tilt-reverse="true" data-tilt-max = "10" style = "z-index: 1">
 				<div align="center">
 				<div>
 					<div style = "font-weight: regular; color: white" div align = "center">我是谁啊？</div> 
@@ -303,7 +416,9 @@
 				</div>
 			</div>
 		</div>
-		<div class = "post">
+		</div>
+	<div class = "card-stack">
+		<div class = "xiaomi post">
 				<div>
 					<div style = "font-weight: regular; color: white" div align = "center">我的各种设备</div> 
 					<div> </div>
@@ -352,11 +467,35 @@
 								</div>
 								</div>
 							</div>
-				
+							
+					
+		</div>
+		</div>
+	
+		<div class = 'button'>
+		<label for="flip">-></label>
 						
+							</div>
+			<div class = "post songscard">
+						<div>
+						<div style = "font-weight: regular; color: white" div align = "center">我最爱的歌</div> 
+						<div id = "favsong" style = "white-space: pre-line"> 
+							东南苦行山
+							<img id = "cnsong" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6Tp4qQBuSjNI79TeE1NTlv5ghZiPkm1dKJgtXnrxkIzyARsKqr-2jdsh&s=10">
+							<audio controls>
+								<source src = "assets/cnsong.mp3" type = "audio/mpeg">
+						</div>
+						<div id="songs">
 		</div>
 		</div>
 		</div>
+		</div>
+		</div>
+		</div>
+		</div>		
+		</div>
+	
+		
 	<div id = "bottom_bar">
 	<div align = "center">
 		<div class = "socials-container" align-items: center; width = flex;>
@@ -369,6 +508,7 @@
 				<a data-social = "发我匿名留言!" style = 'width = flex' href = 'https://ngl.link/xyrelium'>
 					<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>NGL</title><path d="M24 4.003h-4.015c-3.45 0-5.3.197-6.748 1.957a7.996 7.996 0 1 0 2.103 9.211c3.182-.231 5.39-2.134 6.085-5.173 0 0-2.399.585-4.43 0 4.018-.777 6.333-3.037 7.005-5.995zM5.61 11.999A2.391 2.391 0 0 1 9.28 9.97a2.966 2.966 0 0 1 2.998-2.528h.008c-.92 1.778-1.407 3.352-1.998 5.263A2.392 2.392 0 0 1 5.61 12Zm2.386-7.996a7.996 7.996 0 1 0 7.996 7.996 7.996 7.996 0 0 0-7.996-7.996Zm0 10.394A2.399 2.399 0 1 1 10.395 12a2.396 2.396 0 0 1-2.399 2.398Z"/></svg>
 				</div>
+		</div>
 		</div>
 		</div>
 		<script type="text/javascript" src="vanilla-tilt.js"></script>
