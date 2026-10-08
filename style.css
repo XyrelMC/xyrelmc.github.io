@@ -411,6 +411,7 @@
 		body {
 			overflow-x: hidden;
 			position: relative;
+			width: 100%;
 		}
 		.post{
 			width: 85vw;
