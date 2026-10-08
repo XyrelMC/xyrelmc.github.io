@@ -404,6 +404,12 @@
 	}
 	
 	@media (max-width: 800px){  
+		html {
+			overflow: hidden;
+		}
+		body {
+			overflow-x: hidden;
+		}
 		.post{
 			width: 85vw;
 			font-size: 15px;
