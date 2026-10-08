@@ -437,9 +437,7 @@
 		#flip:checked ~ .card-stack .xiaomi{
 			    max-height: 20vh;
 			}
-		#flip:checked ~ .card-stack .xiaomi:hover{
-				max-height: 20vh;
-			}
+
 		.card-stack:has(.songscard:hover) .xiaomi{
 				    transform: translateY(0px) scale(0.93);
 				    z-index: 0;
