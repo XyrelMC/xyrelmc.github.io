@@ -167,6 +167,7 @@
 			font-size:15px;
 			white-space: pre-line;
 			color: gray;
+			text-shadow: 2px 2px 4px #000000;
 			transition:
 				max-height 0.25s ease-out,
 				display 0.25s allow-discrete;
@@ -217,6 +218,7 @@
 			font-size:15px;
 			white-space: pre-line;
 			color: gray;
+			text-shadow: 2px 2px 4px #000000;
 			transition:
 				max-height 0.25s ease-out,
 				display 0.25s allow-discrete;
@@ -264,6 +266,7 @@
 			font-size:15px;
 			white-space: pre-line;
 			color: gray;
+			text-shadow: 2px 2px 4px #000000;
 			transition:
 				max-height 0.25s ease-out,
 				display 0.25s allow-discrete;
@@ -305,6 +308,7 @@
 		.songscard{
 		    transform: translateY(-30px) scale(0.93);
 			z-index: 0;
+			max-height: 300px;
 		}
 		.card-stack:has(.songscard:hover) .xiaomi{
 		    transform: translateY(0px) scale(0.93);
@@ -314,6 +318,7 @@
 		.songscard:hover {
 			transform: translateY(-30px) scale(1);
 			z-index: 2;
+			max-height: 400px;
 		}
 		
 		
@@ -362,6 +367,8 @@
 		#flip:checked ~ .card-stack .songscard{
 		    transform: translateY(0px) scale(1);
 		    z-index: 2;
+			max-height: 400px;
+			height: auto;
 		}
 		#flip:checked ~ .card-stack .xiaomi{
 		    transform: translateY(-30px) scale(0.93);
@@ -380,6 +387,7 @@
 		
 		.card-stack .post{
 		    transition: transform 0.3s ease;
+			align-self: start;
 		}
 		
 		#cnsong {
@@ -419,7 +427,7 @@
 			</div>
 		</div>
 		<div class = "card-stack">
-				<div class = "xiaomi post">
+				<div class = "xiaomi post" style = "backdrop-filter:blur(40px); -webkit-backdrop-filter:blur(40px);">
 				<div>
 					<div style = "font-weight: regular; color: white" div align = "center">My Devices</div> 
 					<div> </div>
@@ -479,17 +487,15 @@
 					<label for="flip">-></label>
 									
 										</div>
-					<div class = "post songscard">
-								<div>
+					<div class = "post songscard" style = "backdrop-filter:blur(40px); -webkit-backdrop-filter:blur(40px);">
 								<div style = "font-weight: regular; color: white" div align = "center">My favorite song!</div> 
 								<div id = "favsong" style = "white-space: pre-line">Struggling in the Southeast
-									<img id = "cnsong" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6Tp4qQBuSjNI79TeE1NTlv5ghZiPkm1dKJgtXnrxkIzyARsKqr-2jdsh&s=10">
+									<img id = "cnsong" style = "margin-bottom: 10px" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP6Tp4qQBuSjNI79TeE1NTlv5ghZiPkm1dKJgtXnrxkIzyARsKqr-2jdsh&s=10">
 									<audio controls>
 										<source src = "assets/cnsong.mp3" type = "audio/mpeg">
+					
 								</div>
-								<div id="songs">
 	
-		</div>
 		</div>
 		</div>
 		</div>		
