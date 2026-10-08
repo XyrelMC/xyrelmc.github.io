@@ -62,7 +62,7 @@
 		background-color:rgb(49,49,49,0.4);
 		backdrop-filter:blur(10px);
 		-webkit-backdrop-filter:blur(10px);
-		width: 70vw;
+		width: 55vw;
 		height: auto;
 		max-height: 45vh;
 		border-radius: 30px;
@@ -296,7 +296,7 @@
 	.card-stack{
 		position: relative;
 	    display: grid;
-	    width: 70vw;
+	    width: 55vw;
 	    margin: 20px auto;
 
 
@@ -383,8 +383,11 @@
 		transform: translateY(-30px) scale(1);
 		z-index: 3;
 	}
+	#flip:checked ~ .card-stack .songscard:hover{
+		transform: translateY(-3px);
+		animation: 0.3s;
 	
-	
+	}
 	
 	.card-stack .post{
 	    transition: transform 0.3s ease;
@@ -400,8 +403,15 @@
 	}
 	
 	@media (max-width: 800px){  
+		.post{
+			width: 90vw;
+		}
 		.images {
 			display: block;
+		}
+		
+		.card-stack {
+			width: 90vw;
 		}
 		.card-stack:has(.songscard:hover) .xiaomi{
 				    transform: translateY(0px) scale(0.93);
