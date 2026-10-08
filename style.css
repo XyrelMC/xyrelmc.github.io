@@ -405,10 +405,12 @@
 	
 	@media (max-width: 800px){  
 		html {
+			overflow-x: hidden;
 			overflow: hidden;
 		}
 		body {
 			overflow-x: hidden;
+			position: relative;
 		}
 		.post{
 			width: 85vw;
