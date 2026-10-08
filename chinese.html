@@ -2,6 +2,7 @@
 <link href="https://googleapis.com" rel="stylesheet">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Xyrelium</title>
 	</head>
 	
@@ -10,14 +11,20 @@
 		@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 		body{
 			margin:0;
+			height:100%
 			min-height:100vh;
 			background-image:url("https://raw.githubusercontent.com/XyrelMC/xyrelmc.github.io/refs/heads/main/assets/background.webp");	
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-attachment: fixed;
-			overflow: hidden;
+			overflow: auto;
 		}
+		html {
+		    overflow: hidden;
+		    height: 100%;
+		}
+
 		#bar{
 			height:100px;
 			background-color: rgb(0,0,0,0.4);
@@ -63,9 +70,9 @@
 			background-color:rgb(49,49,49,0.4);
 			backdrop-filter:blur(10px);
 			-webkit-backdrop-filter:blur(10px);
-			width: 1000px;
+			width: 70vw;
 			height: auto;
-			max-height: 400px;
+			max-height: 45vh;
 			border-radius: 30px;
 			margin: 20px;
 			color: gray;
@@ -297,7 +304,7 @@
 		.card-stack{
 			position: relative;
 		    display: grid;
-		    width: 1000px;
+		    width: 70vw;
 		    margin: 20px auto;
 
 
@@ -309,7 +316,7 @@
 		}
 		.songscard{
 		    transform: translateY(-30px) scale(0.93);
-			max-height: 300px;
+			max-height: 25vh;
 			z-index: 0;
 		}
 		.card-stack:has(.songscard:hover) .xiaomi{
@@ -320,7 +327,7 @@
 		.songscard:hover {
 			transform: translateY(-30px) scale(1);
 			z-index: 2;
-			max-height: 400px;
+			max-height: 45vh;
 		}
 		
 		
@@ -369,7 +376,7 @@
 		#flip:checked ~ .card-stack .songscard{
 		    transform: translateY(0px) scale(1);
 		    z-index: 2;
-			max-height: 400px;
+			max-height: 45vh;
 			height: auto;
 		}
 		#flip:checked ~ .card-stack .xiaomi{
@@ -399,6 +406,13 @@
 			border-radius: 20px;
 			background-color: transparent;
 		}
+		
+		@media (max-width: 800px){  
+			.images {
+				display: block;
+			}
+			
+			}
 		
 		
 		
