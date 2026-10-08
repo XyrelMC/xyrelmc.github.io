@@ -1,111 +1,413 @@
-body{
-	margin:0;
-	min-height:100vh;
-	background-image:url("https://raw.githubusercontent.com/XyrelMC/xyrelmc.github.io/refs/heads/main/assets/background.webp");	
-	background-position: center;
-	background-repeat: repeat;
-	background-size: cover;
-	background-attachment: fixed;
-}
 
-#bar{
-	height:185px;
-	background-color: rgb(0,0,0,0.3);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter:blur(10px);
-	color: white; 
-	padding: 10px;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left:0;
-	z-index:1000;
-	display: flex;
-	flex-direction: column;
-}
+	@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+	body{
+		margin:0;
+		height:100%
+		min-height:100vh;
+		background-image:url("assets/background.webp");	
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-color: black;
+		overflow: auto;
+	}
+	html {
+	    overflow: hidden;
+	    height: 100%;
+	}
 
-#about{
-	font-size:30px;
-}
-
-textarea{
-	margin-top: -70px;
-	width: 30%;
-	padding: 30px;
-	border:1px solid rgb(69,69,69);
-	border-radius: 32px;
-	background-color: rgb(49, 49, 49,0.5);
-	backdrop-filter: blur(10px); /* blur for chromium browsers /
-	-webkit-backdrop-filter: blur(10px); / i think this is blur for safari */
-	font-family:helvetica;
-	font-weight: lighter;
-	font-size: 20px;
-	margin-left: auto;
-	margin-right: auto;
-	text-color: white;
-	color: white;
-	transition:0.3s;
-
-}
-		
-textarea:hover{
-	box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-	transform: translateY(-3px); /* card move upwards by 3 pixels */
+	#bar{
+		height:100px;
+		background-color: rgb(0,0,0,0.4);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter:blur(10px);
+		color: white; 
+		padding: 10px;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left:0;
+		z-index:1000;
+		display: flex;
+		flex-direction: column; 
 		}
 		
-#post_button{
-    border:1px solid white;
-    padding: 4px;
-    border-radius:15px;
-    font-size:20px;
-	font-weight: lighter;
-    background-color:rgb(0,0,0,0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    color: white;
-    padding: 8px;
-}
 
-#post_bar{
-    margin-top: 190px;
-    background-color: transparent;
-    padding: 10px;
-}
+	
+	#post_button{
+		border:1px solid white;
+		padding: 4px;
+		border-radius:15px;
+		font-size:20px;
+		background-color:rgb(0,0,0,0.7);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter:blur(10px);
+		color: white;
+		padding: 8px;
+	}
+	#post_bar{
+		margin-top: 50px;
+		background-color: transparent;
+		min-height: 10vh;
+		padding: 10px;
+	}
+	.post{
+		padding:20px;
+		font-family: 'poppins', sans-serif;
+		font-weight: light;
+		font-size:25px;
+		display:block;
+		border:1px solid rgb(69,69,69);
+		background-color:rgb(49,49,49,0.4);
+		backdrop-filter:blur(10px);
+		-webkit-backdrop-filter:blur(10px);
+		width: 70vw;
+		height: auto;
+		max-height: 45vh;
+		border-radius: 30px;
+		margin: 20px;
+		color: gray;
+		transition: 0.3s;
+		align-items: center;
+		overflow: auto;
+		-ms-overflow-style: none;  /* Internet Explorer 10+ */
+		scrollbar-width: none;
+		transition: max-height 1s ease-in-out;
+		
+	}
+	.post:hover{
+		box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+		transform: translateY(-3px); /* card move upwards by 3 pixels */
+		
+			
+	}
+	
+	.xiaomi {
+		z-index: 1;
+	}
+	.socials-container{
+		display: inline-flex;
+		gap: 20px;
+		align-items: center;
+		z-index: 6;
+	}
+	.socials-container a{
+		background-color: white;
+		padding: 1em;
+		border-radius: 50%;
+		height: 64px;
+		width: auto;
+		box-sizing: border-box;
+		flex-shrink; 0;
+		display: grid;
+		place-items: center;
+		box-shadow: 0 0px 20px rgba(255, 255, 255);
+		z-index: 6;
 
-@keyframes appear{
-    from {
-        scale: 0.5;
-        transform: TranslateX(-100px);
+	}
+	.socials-container a svg{
+		height: 32px;
+		z-index: 6;
+	}
+	.socials-container a:hover{
+				box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+				transform: translateY(5px); 
+				transition: 0.3s;
+		}
 
-    } to {
-        scale: 1;
-        transform: translateX(0px);
-    }
-}
+	.socials-container a::before{
+		content: attr(data-social);
+		width: auto;
+		position: absolute;
+		background-color: white;
+		color: black;
+		text-decoration: none;
+		padding: 0.5em 1em;
+		border-radius: 30px;
+		box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+		transform: translateY(-65px);
+		opacity:0;
+		white-space: nowrap;
+		z-index: 6;
+	}
+	.socials-container a:hover::before{
+		opacity: 1;
+	}
+	.socials-container a:hover .post:hover{
+		transform: translateY(-5px); 
+		transition: 0.3s;
+	}
+	.images {
+	    display: flex;
+	    gap: 20px;
+	    justify-content: center;
+	    align-items: flex-start;
+		font-size: 23px;
+	}
+	
+	#ximi {
+		display: flex;
+		width: 200px;
+		height: 200px;
+		align-items:left;
+		border-radius: 20px;
+		background-color: transparent;
+		
+	}
+	
+	#ximitext {
+		max-height: 0;
+		overflow: hidden;
+		display: none;
+		align-items: center;
+		font-family: 'poppins';
+		font-weight: lighter;
+		font-size:15px;
+		white-space: pre-line;
+		color: gray;
+		text-shadow: 2px 2px 4px #000000;
+		transition:
+			max-height 0.25s ease-out,
+			display 0.25s allow-discrete;
+		}
 
-.post{
-    padding:10px;
-    font-size:20px;
-	font-weight: lighter;
-    display:flex;
-    border:1px solid rgb(69,69,69);
-    background-color:rgb(49,49,49,0.4);
-    backdrop-filter:blur(10px);
-    -webkit-backdrop-filter:blur(10px);
-    width: 700px;
-    border-radius: 15px;
-    margin: 20px;
-    color: white;
-    transition: 0.3s;
 
-  /*  animation: appear linear;
-    animation-timeline: view();
-    animation-range: entry 30%;
-    */
-}
 
-.post:hover{
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    transform: translateY(-3px); /* card move upwards by 3 pixels */
-        
-}
+	#ximi:hover~#ximitext{
+		display: block;
+		max-height: 250px;
+		
+		@starting-style {
+			max-height:0;
+		}
+	}
+	
+	#ximitext:hover{
+		display: block;
+		max-height: 250px;
+	}
+		
+	#ximi:hover {
+		box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+		transform: translateY(-4px); 
+		transition: 0.3s;
+		border:1px solid rgb(69,69,69);
+	}
+	#ximidiv {
+		position: relative;
+		tab-size: 2;
+	}
+	#ximipad {
+		display: flex;
+		width: 200px;
+		height: 200px;
+		align-items:center;
+		border-radius: 20px;
+		background-color: transparent;
+	}
+	
+	#padtext {
+		max-height: 0;
+		overflow: hidden;
+		display: none;
+		align-items: center;
+		font-family: 'poppins';
+		font-weight: lighter;
+		font-size:15px;
+		white-space: pre-line;
+		color: gray;
+		text-shadow: 2px 2px 4px #000000;
+		transition:
+			max-height 0.25s ease-out,
+			display 0.25s allow-discrete;
+	}
+
+
+	#ximipad:hover~#padtext{
+		display: block;
+		max-height: 250px;
+		
+		@starting-style {
+			max-height:0;
+		}
+	}
+	
+	#padtext:hover{
+		display: block;
+		max-height: 250px;
+	}
+	#ximipad:hover {
+		box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+		transform: translateY(-4px); 
+		transition: 0.3s;
+		border:1px solid rgb(69,69,69);
+	}
+	#ximidiv {
+		position: relative;
+		tab-size: 2;
+	}
+	#macbook {
+		display: flex;
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
+		background-color: transparent;
+	}
+	
+	#mactext {
+		display: none;
+		max-height: 0;
+		overflow: hidden;
+		align-items: center;
+		font-family: 'poppins';
+		font-weight: lighter;
+		font-size:15px;
+		white-space: pre-line;
+		color: gray;
+		transition:
+			max-height 0.25s ease-out,
+			display 0.25s allow-discrete;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+
+	#macbook:hover~#mactext{
+		display: block;
+		max-height: 200px;
+		
+		@starting-style {
+			max-height: 0;
+		}
+	}
+
+	#macbook:hover {
+		box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+		transform: translateY(-4px); 
+		transition: 0.3s;
+		border:1px solid rgb(69,69,69);
+	}
+	
+	#lang {
+		color: white;
+		font-size: 25px;
+	}
+	
+	.card-stack{
+		position: relative;
+	    display: grid;
+	    width: 70vw;
+	    margin: 20px auto;
+
+
+	}
+	.card-stack .post{
+	    grid-area: 1 / 1;      /* every card goes in the same cell */
+	    margin: 0;
+	    box-sizing: border-box;
+	}
+	.songscard{
+	    transform: translateY(-30px) scale(0.93);
+		max-height: 25vh;
+		z-index: 0;
+	}
+	.card-stack:has(.songscard:hover) .xiaomi{
+	    transform: translateY(105px) scale(0.93);
+	    z-index: 0;
+	}
+	
+	.songscard:hover {
+		transform: translateY(-30px) scale(1);
+		z-index: 2;
+		max-height: 45vh;
+	}
+	
+	
+
+	#intro {
+		margin-bottom: 50px;
+	}
+	
+	.button {
+	    position: absolute;
+	    left: 100%;
+	    bottom: 0;
+	    margin-left: 20px;
+	    z-index: 5;
+	    width: 50px;
+	    height: 50px;
+	    display: grid;
+	    place-items: center;
+	    border-radius: 10px;
+	    border: 1px solid rgb(69,69,69);
+	    background-color: rgb(49,49,49,0.4);
+	    backdrop-filter: blur(10px);
+	    -webkit-backdrop-filter: blur(10px);
+	    color: white;
+	}
+	
+	input {
+		display: none;
+		align-items: center;
+	}
+	.button label {
+		width: 100%;
+		height: 100%;
+		cursor: pointer;
+		align-items: center;
+		text-align: center;
+		place-items: center;
+		display: grid;
+	}
+	#flip: {
+		align-items: center;
+		text-align: center;
+		place-items: center;
+		
+	}
+	#flip:checked ~ .card-stack .songscard{
+	    transform: translateY(0px) scale(1);
+	    z-index: 2;
+		max-height: 45vh;
+		height: auto;
+	}
+	#flip:checked ~ .card-stack .xiaomi{
+	    transform: translateY(-30px) scale(0.93);
+	    z-index: 0;
+	}
+	#flip:checked ~ .card-stack .xiaomi:hover ~ .songscard{
+		transform: translateY(0px) scale(0.93);
+		z-index: 0;
+	}
+	#flip:checked ~ .card-stack .xiaomi:hover{
+		transform: translateY(-30px) scale(1);
+		z-index: 3;
+	}
+	
+	
+	
+	.card-stack .post{
+	    transition: transform 0.3s ease;
+		align-self: start;
+	}
+	
+	#cnsong {
+		display: center;
+		width: 200px;
+		height: 200px;
+		border-radius: 20px;
+		background-color: transparent;
+	}
+	
+	@media (max-width: 800px){  
+		.images {
+			display: block;
+		}
+		.card-stack:has(.songscard:hover) .xiaomi{
+				    transform: translateY(0px) scale(0.93);
+				    z-index: 0;
+				}
+		
+		}
+	
+	
